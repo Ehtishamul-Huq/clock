@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Digital Clock!</title>
+    <script>
+        let a;
+        let time;
+        let date;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            date = a.toLocaleDateString(undefined, options);
+            document.getElementById('time').innerHTML = time + "<br> on " + date;
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <div class="container my-4" style="padding: 100px; text-align: center;">
+        <div class="card text-center">
+            <div class="card-header">
+               <h1>DIGITAL CLOCK</h1>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Current time is: <span id="time"></span></h2>
+                <p class="card-text">This is Indian Standard Time.</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
